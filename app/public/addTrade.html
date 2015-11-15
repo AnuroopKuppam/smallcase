@@ -1,0 +1,33 @@
+
+<html>
+	<head>
+		<title> Smallcase</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js">
+		</script>
+		<script type="text/javascript" src="js/trade_controller.js"></script>
+	</head>
+
+	<body ng-app='trade_ctrl' ng-controller='Trade_Ctrl'>
+		<h1>Adding Trade</h1>
+		<ul>
+  			<li ng-repeat="y in stocks track by $index">
+  					Stock: {{y.id}} : : : {{y.name}} <br>
+  					Add Trade: 
+  					<ul>
+  						<li>
+  							BUY/SELL <input type="text" ng-model="add.type"/>
+  						</li>
+  						<li>
+  							Quantity <input type="text" ng-model="add.quantity"/>
+  						</li>
+  						<li>
+  							Cost <input type="text" ng-model="add.cost" />
+  						</li>
+  						<li>
+  							<input type="submit" ng-click="addTrade(y.id)"/>
+  						</li>
+  					</ul>
+  			</li>
+  		</ul>
+	</body>
+</html>

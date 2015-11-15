@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title> Smallcase </title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js">
+		</script>
+		<script type="text/javascript" src="js/controller.js"></script>
+	</head>
+	<body ng-app="myApp" ng-controller="AppCtrl">
+		<h1>Viewing Returns</h1>
+  		<ul>
+  			<li ng-repeat="x in portfolio track by $index">
+  				<ul>
+  					<li ng-repeat="y in x.stocks track by $index">
+  						Stock: {{y.name}}. You have holdings {{y.holdings}} @ {{y.avg}} (Avg of all Buys) <br>
+  						Your returns for this stock are : {{y.cummulative_return}}
+  					</li>
+  				</ul>
+  			</li>
+  		</ul>
+	</body>
+</html>
